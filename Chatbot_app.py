@@ -3,10 +3,11 @@ import streamlit as st
 from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 import os
-
+from dotenv import load_dotenv
 
 st.title("IT@AP Chatbot")
 
+load_dotenv()
 client_mistral = MistralClient(api_key=os.environ["MISTRAL_API_KEY"])
 
 
@@ -24,7 +25,7 @@ if "messages" not in st.session_state:
 #systeem prompt
 if "system_prompt" not in st.session_state:
     st.session_state["system_prompt"] = """
-    Je bent een informatica en AI specialist die advies geeft over coderen van modellen. 
+    Je bent een leraar die feedback geeft over syntax errors in de code van studenten. Opgelet, je verbeter enkel syntax errors, geen logische fouten.
     """
 
 for message in st.session_state.messages:
