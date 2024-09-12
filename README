@@ -1,0 +1,11 @@
+# README
+
+## Installation
+Create a virtual environment based on the requirements.txt file.
+Make a local .env file containing your Mistral API Key: 
+`MISTRAL_API_KEY=%your_api_key%`
+
+run the script with `streamlit run Chatbot_app.py`
+
+## Configuration
+Make changes in de python file, for example to the prompt and available models.
